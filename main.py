@@ -16,9 +16,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Replace these with your actual credentials
-GOOGLE_CLIENT_ID = os.getenv("YOUR_CLIENT_ID")
-GOOGLE_CLIENT_SECRET = os.getenv("YOUR_CLIENT_SECRET")
+# Use environment variables from Render
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 REDIRECT_URI = "https://your-backend-url.onrender.com/callback"
 
 buttons = []
@@ -60,11 +60,11 @@ def callback(code: str):
     token = r.json()
     access_token = token.get("access_token")
     content = f"""
-<script>
-  localStorage.setItem('access_token', '{access_token}');
-  window.location.href = '/';
-</script>
-"""
+    <script>
+      localStorage.setItem('access_token', '{access_token}');
+      window.location.href = '/';
+    </script>
+    """
     return Response(content=content, media_type="text/html")
 
 @app.get("/calendar")
