@@ -19,7 +19,7 @@ app.add_middleware(
 # Use environment variables from Render
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = "https://home-assistant-api.onrender.com"
+REDIRECT_URI = "https://home-assistant-api-unjt.onrender.com"
 
 buttons = []
 
