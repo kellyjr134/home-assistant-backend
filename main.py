@@ -19,7 +19,7 @@ app.add_middleware(
 # Use environment variables from Render
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = "https://your-backend-url.onrender.com/"
+REDIRECT_URI = "https://home-assistant-api.onrender.com"
 
 buttons = []
 
@@ -56,7 +56,7 @@ def callback(code: str):
     }
     r = requests.post(token_url, data=data)
     if r.status_code != 200:
-        raise HTTPException(status_code=400, detail="Token exchange failed")
+        raise HTTPException(status_code=400, detail=f"Token exchange failed: {r.text}")
     token = r.json()
     access_token = token.get("access_token")
     content = f"""
