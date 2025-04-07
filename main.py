@@ -17,8 +17,8 @@ app.add_middleware(
 )
 
 # Replace these with your actual credentials
-GOOGLE_CLIENT_ID = "YOUR_CLIENT_ID"
-GOOGLE_CLIENT_SECRET = "YOUR_CLIENT_SECRET"
+GOOGLE_CLIENT_ID = os.getenv("YOUR_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("YOUR_CLIENT_SECRET")
 REDIRECT_URI = "https://your-backend-url.onrender.com/callback"
 
 buttons = []
