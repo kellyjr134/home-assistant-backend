@@ -19,7 +19,7 @@ app.add_middleware(
 # Use environment variables from Render
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = "https://your-backend-url.onrender.com/callback"
+REDIRECT_URI = "https://your-backend-url.onrender.com/"
 
 buttons = []
 
